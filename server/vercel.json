@@ -10,7 +10,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/dist/api"
+      "destination": "/api/index.ts"
     }
   ]
 }
