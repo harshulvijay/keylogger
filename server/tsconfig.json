@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "useDefineForClassFields": true,
+    "moduleDetection": "force",
+
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noUncheckedSideEffectImports": true,
+    "resolveJsonModule": true,
+    "allowArbitraryExtensions": true,
+
+    "allowJs": true,
+    "checkJs": true,
+
+    "sourceMap": true,
+    "outDir": "./dist",
+    "removeComments": true,
+
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
