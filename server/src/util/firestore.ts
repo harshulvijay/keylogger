@@ -1,5 +1,5 @@
 import admin from "firebase-admin";
-import { loadDotEnv } from "./env";
+import { loadDotEnv } from "./env.ts";
 
 // load environment variables (in development)
 await loadDotEnv();
