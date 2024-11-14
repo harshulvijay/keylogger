@@ -1,6 +1,6 @@
 import express, { json } from "express";
-import apiRouter from "../src/routes/api.ts";
-import { loadDotEnv } from "../src/util/env.ts";
+import apiRouter from "./src/routes/api.ts";
+import { loadDotEnv } from "./src/util/env.ts";
 
 // load environment variables (in development)
 await loadDotEnv();
