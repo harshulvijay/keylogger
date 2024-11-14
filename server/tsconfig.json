@@ -32,6 +32,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["src", "api/index.ts"],
+  "include": ["src", "src/index.ts"],
   "exclude": ["node_modules"]
 }
