@@ -1,6 +1,6 @@
 import express, { json } from "express";
-import apiRouter from "./routes/api";
-import { loadDotEnv } from "./util/env";
+import apiRouter from "../src/routes/api";
+import { loadDotEnv } from "../src/util/env";
 
 // load environment variables (in development)
 await loadDotEnv();
