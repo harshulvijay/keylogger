@@ -1,0 +1,19 @@
+import express, { json } from "express";
+import apiRouter from "./routes/api";
+import { loadDotEnv } from "./util/env";
+
+// load environment variables (in development)
+await loadDotEnv();
+
+// create a new Express app
+const app = express();
+
+// use the JSON middleware to parse body content as JSON
+app.use(json());
+
+// setup the router
+app.use("/api", apiRouter);
+
+app.listen(process.env.APPLICATION_PORT, () => {
+	console.log(`[info] listening on port ${process.env.APPLICATION_PORT}`);
+});
