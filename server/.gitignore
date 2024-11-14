@@ -1,6 +1,3 @@
-# output directory
-/api
-
 # Logs
 logs
 *.log
