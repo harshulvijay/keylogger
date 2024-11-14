@@ -8,8 +8,8 @@ import { NodeResolvePlugin as NodeResolve } from "@esbuild-plugins/node-resolve"
  */
 function createBuildSettings(options) {
 	return {
-		entryPoints: ["src/index.ts"],
-		outfile: "api/index.js",
+		entryPoints: ["api/index.ts"],
+		outfile: "dist/api/index.js",
 		plugins: [
 			esbuildPluginTsc({
 				force: true,
