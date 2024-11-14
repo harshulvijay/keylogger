@@ -4,14 +4,14 @@
   "framework": null,
   "buildCommand": "pnpm build",
   "functions": {
-    "api/index.js": {
+    "api/index.ts": {
       "includeFiles": "src/**"
     }
   },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/api/index.js"
+      "destination": "/api/index.ts"
     }
   ]
 }
