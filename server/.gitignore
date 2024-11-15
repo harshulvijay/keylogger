@@ -1,3 +1,7 @@
+# output directories
+/api
+dist
+
 # Logs
 logs
 *.log
