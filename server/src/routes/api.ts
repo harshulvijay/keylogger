@@ -1,6 +1,6 @@
 import { Router } from "express";
-import log from "./log";
-import ws from "./ws";
+import log from "./log.ts";
+import ws from "./ws.ts";
 
 // router
 const router = Router({});

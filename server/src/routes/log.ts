@@ -1,9 +1,7 @@
 import { Router } from "express";
-import { LoggedData, SaveRequest } from "../util/types";
+import { LoggedData, SaveRequest } from "../util/types.ts";
 import { randomUUID } from "crypto";
-// import { mkdir, writeFile } from "fs/promises";
-// import { existsSync } from "fs";
-import firestore from "../util/firestore";
+import firestore from "../util/firestore.ts";
 
 // router
 const router = Router({});

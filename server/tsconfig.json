@@ -4,9 +4,11 @@
     "lib": ["ESNext", "DOM"],
     "useDefineForClassFields": true,
     "moduleDetection": "force",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
 
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "module": "Node16",
+    "moduleResolution": "node16",
     "noUncheckedSideEffectImports": true,
     "resolveJsonModule": true,
     "allowArbitraryExtensions": true,
@@ -30,6 +32,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["src", "api/index.ts"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }
