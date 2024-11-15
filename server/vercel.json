@@ -3,6 +3,10 @@
   "version": 2,
   "framework": null,
   "buildCommand": "pnpm build",
+  "outputDirectory": "dist",
+  "git": {
+    "deploymentEnabled": false
+  },
   "functions": {
     "api/index.ts": {
       "includeFiles": "dist/**"
@@ -11,7 +15,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/api/index.ts"
+      "destination": "/api"
     }
   ]
 }
