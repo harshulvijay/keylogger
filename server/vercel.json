@@ -2,15 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "framework": null,
-  "buildCommand": "pnpm build",
-  "outputDirectory": "dist",
   "git": {
     "deploymentEnabled": false
-  },
-  "functions": {
-    "api/index.ts": {
-      "includeFiles": "dist/**"
-    }
   },
   "rewrites": [
     {
