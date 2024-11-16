@@ -9,6 +9,7 @@ A keylogger created for a BITSkrieg assignment.
 - Captures keyboard events globally
 - Stores logs periodically inside a hidden directory in the user's home directory
 - Works well on Windows
+- Runs without a terminal window on Windows
 
 TODO: support Linux
 TODO: add networking to upload logs to the server
