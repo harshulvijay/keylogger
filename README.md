@@ -53,6 +53,6 @@ Body is sent only only when the client doesn't set `t` in its request to the ser
 
 ```json
 {
-  "t": "14a901d8-e488-45e5-bdfe-2963317718f2"
+  "id": "MTRhOTAxZDgtZTQ4OC00NWU1LWJkZmUtMjk2MzMxNzcxOGYy"
 }
 ```
