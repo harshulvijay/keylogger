@@ -10,6 +10,7 @@ A keylogger created for a BITSkrieg assignment.
 - Stores logs periodically inside a hidden directory in the user's home directory
 - Works well on Windows
 - Runs without a terminal window on Windows
+- Sends data periodically to a remote server
 
 TODO: support Linux
 
